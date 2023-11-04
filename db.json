@@ -1,5 +1,5 @@
 {
-"clientes":[
+  "clientes": [
     {
       "id": 1,
       "nombre": "Juan",
@@ -34,6 +34,62 @@
       "telefono": 1398198938,
       "email": "pedro@juan.com",
       "empresa": "Codigo Con Juan"
+    },
+    {
+      "nombre": "dasd",
+      "empresa": "instelca",
+      "email": "appcartama@hotmail.com",
+      "telefono": "+34644205732",
+      "notas": "asdas",
+      "id": 6
+    },
+    {
+      "nombre": "dasd",
+      "empresa": "instelca",
+      "email": "appcartama@hotmail.com",
+      "telefono": "+34644205732",
+      "notas": "asdas",
+      "id": 7
+    },
+    {
+      "nombre": "dasd",
+      "empresa": "instelca",
+      "email": "appcartama@hotmail.com",
+      "telefono": "+34644205732",
+      "notas": "asdas",
+      "id": 8
+    },
+    {
+      "nombre": "dasd",
+      "empresa": "instelca",
+      "email": "appcartama@hotmail.com",
+      "telefono": "+34644205732",
+      "notas": "asdas",
+      "id": 9
+    },
+    {
+      "nombre": "juan desde react",
+      "empresa": "instelca",
+      "email": "appcartama@hotmail.com",
+      "telefono": "+34644205732",
+      "notas": "asdasd",
+      "id": 10
+    },
+    {
+      "nombre": "asdasd",
+      "empresa": "asda",
+      "email": "jmgarrido@instelca.com",
+      "telefono": "666666666",
+      "notas": "asdasd",
+      "id": 11
+    },
+    {
+      "nombre": "asdasd",
+      "empresa": "asda",
+      "email": "jmgarrido@instelca.com",
+      "telefono": "666666666",
+      "notas": "asdasd",
+      "id": 12
     }
   ]
 }

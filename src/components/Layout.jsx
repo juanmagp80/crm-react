@@ -1,4 +1,4 @@
-import { Outlet, Link, useLocation } from 'react-router-dom'
+import { Outlet, Link, NavLink, useLocation } from 'react-router-dom'
 
 import React from 'react'
 
@@ -18,6 +18,7 @@ const Layout = () => {
                     <Link
                         to='/clientes/nuevo'
                         className={`${location.pathname === '/clientes/nuevo' ? 'text-blue-300' : 'text white'} block text-white my-5 hover:text-blue-300'`}>Nuevo Cliente</Link>
+
                 </nav>
             </aside>
             <main className='md:w-3/4 p-10 md:h-screen overflow-scroll'>
