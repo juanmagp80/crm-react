@@ -1,7 +1,38 @@
-import { useNavigate } from "react-router-dom";
+import { useNavigate, Form, useActionData } from "react-router-dom";
+import Formulario from "../components/Formulario";
+import Error from "../components/Error";
+
+export async function action({ request }) {
+  const formData = await request.formData();
+  const data = Object.fromEntries(formData.entries());
+  const email = formData.get("email");
+
+  const errores = [];
+
+  if (Object.values(data).includes("")) {
+    errores.push("Todos los campos son obligatorios");
+  }
+  let regex = new RegExp(
+    "([!#-'*+/-9=?A-Z^-~-]+(.[!#-'*+/-9=?A-Z^-~-]+)*|\"([]!#-[^-~ \t]|(\\[\t -~]))+\")@([!#-'*+/-9=?A-Z^-~-]+(.[!#-'*+/-9=?A-Z^-~-]+)*|[[\t -Z^-~]*])"
+  );
+  if (!regex.test(email)) {
+    errores.push("El email no es válido");
+  }
+
+  if (Object.keys(errores).length) {
+    return errores;
+  }
+  console.log(errores);
+  return {
+    status: 200,
+  };
+}
+//
 
 const NuevoCliente = () => {
+  const errores = useActionData();
   const navigate = useNavigate();
+  console.log(errores);
 
   return (
     <>
@@ -17,8 +48,18 @@ const NuevoCliente = () => {
           Volver
         </button>
       </div>
-      <div className="bg-white shadow rounded-md md:w-3/4 px-5 py-10 ">
-        <p className="font-bold text-gray-800 text-xl mb-5">Formulario aqui</p>
+      <div className="bg-white shadow rounded-md md:w-3/4 px-5 py-10 mt-20 ">
+        {errores?.length &&
+          errores.map((error, i) => <Error key={i}>{error}</Error>)}
+        <Form method="POST" noValidate>
+          <Formulario />
+
+          <input
+            type="submit"
+            className="mt-5 w-full p-3 bg-blue-800 uppercase font-bold text-white text-lg"
+            value={"Agregar Cliente"}
+          />
+        </Form>
       </div>
     </>
   );
